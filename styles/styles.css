@@ -12,28 +12,20 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  /*min-width: 320px;*/
-  /*height: 100%;*/
-}
-
-/* Mobile first */
+/* General styles - Mobile first */
 
 body {
-  font-family: "IBM Plex Sans";
-  min-width: 320px;
-  max-width: 480px;
-
+  min-width: 375px;
   background-color: #fcfaf9;
+  background-image: url(../assets/bg-main-mobile.png);
+  background-position: right -65.4px top -104px;
+  background-size: 281.4px 480px;
+  background-repeat: no-repeat;
 
-  /*background-image: url(../assets/bg-main-mobile.png);
-  background-position: 159px -104px;
-
-  background-size: 416.4px 560px;*/
-  background-repeat: none;
-
-  /*overflow-x: hidden;*/
+  padding: 40px 24px 80px 24px;
+  /* Setting general font family and color */
+  font-family: "IBM Plex Sans";
+  color: #191826;
 }
 
 h1,
@@ -48,7 +40,7 @@ h1 {
   letter-spacing: -0.45px;
   /* or 100% */
 
-  color: #191826;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -56,7 +48,7 @@ h2 {
   line-height: 40px;
   /* identical to box height, or 130% */
 
-  /*color: #fcfaf9;*/
+  margin-bottom: 12px;
 }
 
 p {
@@ -64,87 +56,93 @@ p {
   line-height: 26px;
 }
 
-header {
-  padding-top: 39.99px;
-  padding-bottom: 0;
-  padding-left: 24px;
+/* Setting paragraph font style for footer, so it keeps the same at all screen sizes */
+footer p {
+  font-size: 16px;
+  line-height: 26px;
 }
 
+/* General styles for buttons */
+button {
+  height: 61px;
+  border-style: none;
+  border-radius: 12px;
+
+  /* Button font styles */
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: -0.18px;
+}
+
+button * {
+  vertical-align: middle;
+}
+
+/* Setting top and bottom paddings for main container div */
 .container {
   padding-top: 64px;
   padding-bottom: 64px;
 }
 
-.title,
-.description {
-  margin-left: 24px;
-  margin-right: 24px;
-}
-
-.title::after {
-  content: "";
-  display: block;
-  height: 20px;
-}
-
-.pattern-1 {
-  display: none;
-}
-
 /* Styles for mask and Orange box */
-
 .mask {
-  margin-top: 166px;
-}
-
-.mask,
-.group-17 {
-  border-radius: 12px;
-}
-
-.mask {
-  display: block;
-  background-color: #191826;
+  /* fixed height for div */
   height: 600px;
+  margin-top: 166px;
+  background-color: #191826;
+  /*text-align: center;*/
+}
+
+/* Set mask and orange border-radius */
+.mask,
+.orange-box {
+  border-radius: 12px;
 }
 
 .pattern-2 {
   display: block;
-  width: 280px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.pattern-2-img {
-  width: 100%;
-}
-
-.group-5 {
   position: relative;
-  top: -518px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 208px;
+  width: 280px;
+  margin: auto;
+
+  z-index: 25;
+}
+
+/* Setting size and position for mobile phone illustration */
+.device {
+  display: block;
+  position: relative;
+  width: 209px;
+  margin: -518px auto auto auto;
+
+  z-index: 50;
 }
 
 /* Styles for orange box */
-.group-17 {
-  box-sizing: border-box;
-  display: block;
+.orange-box {
+  /* Setting position : relative to apply z-index to stack div in front of previous div (mask) and pattern-2 */
   position: relative;
-
-  margin-top: -220px;
-  padding: 48px 37px 48px 36px;
-  color: white;
-
   background-color: #fa7453;
-  z-index: 100;
+
+  /* Setting font color to white as per design */
+  color: #fcfaf9;
+
+  /* Setting internal paddings */
+  padding: 48px 37px 48px 36px;
+
+  /* Move div 220px up to cover part of previous div (mask) */
+  margin-top: -220px;
+
+  z-index: 75;
 }
 
+/* Styling h2 title inside div */
 .premium-eq {
   margin-bottom: 12px;
 }
 
+/* Setting main font styles for "$4 /month" line */
 .four-month {
   margin-top: 36px;
   margin-bottom: 32px;
@@ -153,7 +151,9 @@ header {
   line-height: 52px;
 }
 
+/* Setting font styles for "/month" span to match original design */
 .four-month span {
+  /* Set position : relative to apply bottom margin to move span 16px up */
   position: relative;
   bottom: 16px;
   font-weight: 400;
@@ -162,45 +162,20 @@ header {
   letter-spacing: -0.2px;
 }
 
-button {
-  border-style: none;
-  border-radius: 12px;
-  height: 61px;
-
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 32px;
-  letter-spacing: -0.18px;
-}
-
-button * {
-  display: inline-block;
-  vertical-align: middle;
-}
-
 .ios-btn {
   width: 100%;
-  background: #191826;
+  background-color: #191826;
   margin-bottom: 16px;
   color: #fcfaf9;
 }
 
-.ios-btn:hover {
-  background-color: #66e2dc;
-  cursor: pointer;
-}
-
 .android-btn {
   width: 100%;
-  background: #fcfaf9;
+  background-color: #fcfaf9;
   color: #191826;
 }
 
-.android-btn:hover {
-  background: #ffb964;
-  cursor: pointer;
-}
-
+/* specific styles for footer */
 .equalizer-2 {
   display: block;
 }
@@ -214,41 +189,224 @@ button * {
   font-weight: bold;
 }
 
-footer {
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 80px;
+.social {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 20px;
 }
 
-.icon-instagram {
-  margin-left: 20px;
-  margin-right: 20px;
+@media screen and (max-width: 480px) {
+  /* Set mask and orange box take full body width */
+  .mask,
+  .orange-box {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
 }
 
 /* Styles for tablets */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   body {
-    /*max-height: 1781px;*/
-    /*max-width: 768px;*/
-    /*background-image: url(../assets/bg-main-tablet.png);*/
+    background-image: url(../assets/bg-pattern-1.svg),
+      url(../assets/bg-main-tablet.png);
+    background-position: 107% -3%, -254px -112px;
+    background-size: 266.67px 400px, 938px 808px;
+
+    padding: 62px 39px 85px 39px;
   }
 
-  header {
-    padding-top: 61.99px;
-  }
-
-  .container {
-    padding-top: 95.01px;
-  }
-
-  .title {
+  h1 {
     font-size: 64px;
+    line-height: 64px;
+    letter-spacing: -0.73px;
+    margin-bottom: 28px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* Styles for main container */
+  .container {
+    padding-top: 95px;
+    padding-bottom: 181px;
+  }
+
+  /* Styles for title and description paragraph */
+  .title {
+    max-width: 520px;
+  }
+
+  .description {
+    max-width: 514px;
+  }
+
+  /* Styles for mask and orange box */
+  .mask {
+    margin-top: 249px;
+  }
+
+  .pattern-2 {
+    width: 280px;
+    top: -31px;
+    margin-left: 33%;
+  }
+
+  /* Setting position for mobile device illustration */
+  .device {
+    width: 270px;
+    margin-top: -558px;
+    margin-left: 9%;
+  }
+
+  .orange-box {
+    width: 399px;
+    float: right;
+
+    margin-top: -450px;
+    margin-right: 8%;
+
+    padding-left: 48px;
+    padding-right: 49px;
+  }
+
+  /* Specific styles for footer */
+  .contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+  }
+
+  .contact {
+    margin: 0;
+    max-width: 366px;
+  }
+
+  .social {
+    min-width: 100px;
+    margin-left: 33%;
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1440px) {
+/* Styles for desktop */
+@media screen and (min-width: 769px) {
   body {
     max-width: 1440px;
-    max-height: 1832px;
+
+    background-image: url(../assets/bg-pattern-1.svg),
+      url(../assets/bg-main-desktop.png);
+
+    background-size: 312px 468px, 1613px 1853px;
+    background-position: 100% -40px, -146px -112px;
+
+    padding: 62px 11.45% 91px 11.45%;
+  }
+
+  h1 {
+    font-size: 88px;
+    line-height: 88px;
+    letter-spacing: -1px;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 34px;
+  }
+
+  .container {
+    padding-top: 127px;
+    padding-bottom: 202px;
+  }
+
+  .title {
+    max-width: 1015px;
+  }
+
+  .description {
+    max-width: 825px;
+  }
+
+  .mask {
+    margin-top: 321px;
+  }
+
+  .pattern-2 {
+    width: 312px;
+    top: -40px;
+    margin-left: 30%;
+  }
+
+  .device {
+    width: 312px;
+    margin-top: -681px;
+    margin-left: 9%;
+  }
+
+  .orange-box {
+    width: 446px;
+    float: right;
+
+    padding: 58px 59px 48px 54px;
+    margin-top: -510px;
+    margin-right: 9%;
+  }
+
+  .four-month {
+    margin-top: 39px;
+    margin-bottom: 46px;
+  }
+
+  .ios-btn:hover {
+    background-color: #66e2dc;
+    cursor: pointer;
+  }
+
+  .android-btn:hover {
+    background-color: #ffb964;
+    cursor: pointer;
+  }
+
+  /* Styles for footer */
+  footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .equalizer-2 {
+    display: inline-block;
+    margin-bottom: auto;
+  }
+
+  .contact-info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    margin-left: 12.4%;
+  }
+
+  .contact {
+    margin: 0;
+    max-width: 366px;
+  }
+
+  .social {
+    min-width: 100px;
+    margin-left: 25%;
+  }
+
+  .social svg:hover path {
+    fill: #fa7453;
+    cursor: pointer;
   }
 }
