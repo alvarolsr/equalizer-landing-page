@@ -1,3 +1,10 @@
+/*
+Description: Solution to "Equalizer Landing Page" FrontendMentor Challenge 
+Author: Alvaro Salazar
+Author URL:  https://github.com/alvarolsr/
+Tags: 
+*/
+
 /* added prefixes */
 .example {
   display: grid;
@@ -13,6 +20,11 @@
 }
 
 /* General styles - Mobile first */
+
+html {
+  /*align-items: center;*/
+  max-width: 1440px;
+}
 
 body {
   min-width: 375px;
@@ -176,9 +188,6 @@ button * {
 }
 
 /* specific styles for footer */
-.equalizer-2 {
-  display: block;
-}
 
 .contact {
   margin-top: 32px;
@@ -196,8 +205,8 @@ button * {
   height: 20px;
 }
 
+/* Set mask and orange box to take full body width on mobile screens*/
 @media screen and (max-width: 480px) {
-  /* Set mask and orange box take full body width */
   .mask,
   .orange-box {
     margin-left: -24px;
@@ -379,10 +388,10 @@ button * {
   footer {
     display: flex;
     justify-content: space-between;
+    align-items: top;
   }
 
   .equalizer-2 {
-    display: inline-block;
     margin-bottom: auto;
   }
 
