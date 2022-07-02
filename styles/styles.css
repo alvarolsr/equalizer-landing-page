@@ -92,7 +92,7 @@ button * {
 }
 
 /* Setting top and bottom paddings for main container div */
-.container {
+main {
   padding-top: 64px;
   padding-bottom: 64px;
 }
@@ -238,7 +238,7 @@ button * {
   }
 
   /* Styles for main container */
-  .container {
+  main {
     padding-top: 95px;
     padding-bottom: 181px;
   }
@@ -331,7 +331,7 @@ button * {
     line-height: 34px;
   }
 
-  .container {
+  main {
     padding-top: 127px;
     padding-bottom: 202px;
   }
