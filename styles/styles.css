@@ -279,15 +279,16 @@ main {
   }
 
   /* Specific styles for footer */
+
   .contact-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 32px;
   }
 
   .contact {
-    margin: 0;
+    margin-top: 32px;
+    margin-bottom: 0;
     max-width: 366px;
   }
 
@@ -333,6 +334,11 @@ main {
     padding-bottom: 202px;
   }
 
+  button:hover,
+  .icon:hover path {
+    cursor: pointer;
+  }
+
   .title {
     max-width: 1015px;
   }
@@ -373,23 +379,17 @@ main {
 
   .ios-btn:hover {
     background-color: #66e2dc;
-    cursor: pointer;
   }
 
   .android-btn:hover {
     background-color: #ffb964;
-    cursor: pointer;
   }
 
   /* Styles for footer */
   footer {
     display: flex;
     justify-content: space-between;
-    align-items: top;
-  }
-
-  .equalizer-2 {
-    margin-bottom: auto;
+    align-items: flex-start;
   }
 
   .contact-info {
@@ -411,8 +411,7 @@ main {
     margin-left: 25%;
   }
 
-  .social svg:hover path {
+  .icon:hover path {
     fill: #fa7453;
-    cursor: pointer;
   }
 }
