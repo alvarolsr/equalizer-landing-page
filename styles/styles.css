@@ -14,15 +14,12 @@ Tags:
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 /* General styles - Mobile first */
 
 html {
-  /*align-items: center;*/
   max-width: 1440px;
 }
 
@@ -164,7 +161,7 @@ main {
 }
 
 /* Setting font styles for "/month" span to match original design */
-.four-month span {
+.month {
   /* Set position : relative to apply bottom margin to move span 16px up */
   position: relative;
   bottom: 16px;
@@ -194,7 +191,7 @@ main {
   margin-bottom: 64px;
 }
 
-.contact span {
+.email {
   font-weight: bold;
 }
 
